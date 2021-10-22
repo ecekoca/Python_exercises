@@ -49,13 +49,6 @@ def exchange_ideas(you, me):
     id2=me.ideas
     you.ideas=id2+1
     me.ideas=id1+1
-	
-	#me_temp=Person()
-    #me_temp.ideas=you.ideas+1
-    #you_temp=Person()
-    #you_temp.ideas=me.ideas+1
-    #you=you_temp
-    #me=me_temp
     
     return you.ideas, me.ideas
 
@@ -63,6 +56,3 @@ exchange_apples(johanna, martin)
 print("Johanna has {} apples and Martin has {} apples".format(johanna.apples, martin.apples))
 exchange_ideas(johanna, martin)
 print("Johanna has {} ideas and Martin has {} ideas".format(johanna.ideas, martin.ideas))
-
-
-
