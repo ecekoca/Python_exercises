@@ -10,7 +10,6 @@ def groups_per_user(group_dictionary):
 	user_groups = {}
 	# Go through group_dictionary
 	for group in group_dictionary:
-		#print(group)
 		# Now go through the users in the group
 		for user in group_dictionary[group]:
 			if user in user_groups:
