@@ -2,7 +2,7 @@
 """
 Spyder Editor
 
-This is a temporary script file.
+
 """
 
 def is_palindrome(input_string):
@@ -16,9 +16,6 @@ def is_palindrome(input_string):
 		# end of one string, and to the front
 		# of the other string. 
 		reverse_string= new_string[i] + reverse_string 
-		#if ___:
-		#	new_string = ___
-		#	reverse_string = ___
 	# Compare the strings
 	if new_string==reverse_string:
 		return True
