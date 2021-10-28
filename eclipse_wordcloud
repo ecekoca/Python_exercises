@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+Create a wordcloud from a text file
+
 Created on Tue Oct 26 21:24:04 2021
 @author: ece
 
 """
+
+import wordcloud
+import numpy as np
+
 # words that don't mean much in isolation
 words_to_remove=['those','these','for','of','and','on','then','than','a',
 				 'an','is','was','if','to','as','one','but','no','will',
@@ -12,10 +18,12 @@ words_to_remove=['those','these','for','of','and','on','then','than','a',
 				 'whether','or','from','with','many','my','other','at',
 				 'are','their','I','when','they','all','so','not','some',
 				 'which','its','myself','very','upon','our','do','the',
-				 'it','whatsoever','']
+				 'it','whatsoever','','about','there','any','such','were',
+                          	 'have','would','he','his','any','only','about','total',
+                         	 'more','had','who','during','we']
 
 # upload a text file of a book
-book='/Users/ece/Documents/GitHub/python_ex/eclipse.txt'
+book='/Users/ece/Documents/GitHub/python_ex/eclipse.txt'  # Book is titled 'The Story of Eclipses', taken from the Project Gutenberg
 with open(book) as f:
 	contents=f.read()
 
@@ -44,6 +52,7 @@ for word in words_to_remove:
 	new_words=list(filter(lambda a: a != word, new_words))
 words=new_words
 
+# remove words that are shorter than 2 letters
 for word in words:
 	if len(word)<2:
 		words.remove(word)
@@ -58,4 +67,8 @@ for w in unique_words:
 
 cloud = wordcloud.WordCloud()
 cloud.generate_from_frequencies(new_dict)
-cloud.to_file("myfile.jpg")
+myimage=cloud.to_array()
+plt.imshow(myimage,interpolation = 'nearest')
+plt.axis('off')
+plt.show()
+
